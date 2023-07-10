@@ -1,4 +1,5 @@
 import './style.css'
+import './about.ts'
 
 // import typescriptLogo from './typescript.svg'
 // import viteLogo from '/vite.svg'
@@ -8,13 +9,13 @@ import './style.css'
 
 var mainListDiv = document.getElementById("mainListDiv"),
     mediaButton = document.getElementById("mediaButton");
-
 mediaButton.onclick = function () {
+"use strict";
+mainListDiv.classList.toggle("show_list");
+mediaButton.classList.toggle("active");
+
+
     
-    "use strict";
     
-    mainListDiv.classList.toggle("show_list");
-    mediaButton.classList.toggle("active");
-    
-};
+}
 
