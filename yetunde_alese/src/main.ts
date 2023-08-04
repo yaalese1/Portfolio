@@ -17,19 +17,21 @@ var mainListDiv = document.getElementById("mainListDiv"),
 // used using optional chaining to get rid of obj possibly null error     
         }
 
-const links = document.querySelectorAll(".page-header ul a");
-links.addEventListener(onClick, (e)=>{
-  e.preventDefault()
-});
 
-
-// for (const link of links) {
-//   link.addEventListener("click", clickHandler);
-// }
-// function clickHandler(e){
-//   e.preventdefault();
-//   const href: string = this.getAttribute("href");
-// }
+        const links = document.querySelectorAll(".page-header ul a");
+        for (const link of links) {
+          link.addEventListener("click", clickHandler);
+        }
+        function clickHandler(e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+          console.log(href);
+          const offsetTop = document.querySelector(href).offsetTop;
+          scroll({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+        }
 
 
 
