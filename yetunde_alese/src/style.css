@@ -14,6 +14,9 @@
   
 .body{
   background-image: url(redit.png);
+  /* overflow: auto;
+  width: min-content; */
+
 
 }
 
@@ -250,17 +253,107 @@ border: rounded;
 
 }
 
+.font-firstname {
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: system, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  margin: 0;
+ }
+#animation {
+  --animation-delay: 0.5s;
+  --duration: 800ms;
+  --iterations: 1;
+}
+
+.first-name-text {
+  /* margin: 0 50px; */
+  /* display: inline-block; */
+  padding-top: 9%;
+
+}
+
+.first-name-text {
+  position:;
+  /* position: relative; */
+  font-size: 72px;
+  user-select: none;
+  animation-name: reveal-text;
+  /* cursor: default; */
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: PINK;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: revealer-text;
+  }
+
+  &,
+  &:after {
+    animation-delay: var(--animation-delay);
+    animation-iteration-count: var(--iterations);
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+    /* animation-timing-function: cubic-bezier(0, 0, 0.Z, 1); */
+  }
+ 
+}
+
+@keyframes first-name-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes revealer-text {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
 
 
 #about{
   display:flex ;
   padding-top: 15%;
+  margin-left: 20vw;
+  width:50%;
+  
  
 
    
   font-family:Inter-ExtraLightitalic;
 }
 
+.personal-photo-container{
+  padding-left:40% ;
+}
 .src{
  /* display:flex; */
  border-radius: 20px;
@@ -280,6 +373,11 @@ border: rounded;
 
 html { 
   scroll-behavior: smooth; 
+}
+
+.pet-image{
+  width: 40vw;
+  height: 30vw;
 }
 
 /* .logo:hover {
