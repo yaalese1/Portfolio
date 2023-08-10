@@ -17,7 +17,7 @@ const mainListDiv = document.getElementById("mainListDiv"),
 // used using optional chaining to get rid of obj possibly null error     
         }
 
-const links = document.querySelectorAll(".page-header ul a");
+const links = document.querySelectorAll(".a");
 
   for (const link of links) {
   link.addEventListener("click", clickHandler);
@@ -34,6 +34,41 @@ function clickHandler(e) {
     behavior: "smooth"
   });
 }
+const mainGitRep = document.getElementById("main-repo-button")
+const mainGitRepoLink ="https://github.com/yaalese1"
+function redirectToMainRepo(){
+  let newWindow = window.open(mainGitRepoLink, "_blank")
+  if(newWindow)
+    newWindow.focus()
+  
+
+  // mainGitRep?.addEventListener("click",() => window.location = "https://github.com/yaalese1");
+  console.log("yaya")
+  
+}
+mainGitRep?.addEventListener("click", redirectToMainRepo);
+
+// ...
+
+// Create the anchor element
+// const mainGitRep = document.createElement("a");
+// const containerElement = document.getElementById("main-repo-button"); // Replace with the actual ID of the container element
+// mainGitRep.href = "https://example.com"; // Replace with your desired URL
+// mainGitRep.target = "_blank"; // Set the target to "_blank"
+// // mainGitRep.textContent =
+
+// // Add the anchor element to the DOM
+// if (containerElement) {
+//   containerElement.appendChild(mainGitRep);
+// }
+
+// // Add a click event listener
+// mainGitRep?.addEventListener("click", () => {
+//   console.log("Link clicked.");
+//   // You don't need to use window.open() here since the link itself has target="_blank"
+// });
+
+
 
 
 

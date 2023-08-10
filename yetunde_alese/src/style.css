@@ -270,16 +270,18 @@ border: rounded;
 .first-name-text {
   /* margin: 0 50px; */
   /* display: inline-block; */
-  padding-top: 9%;
+  padding-top: 2%;
 
 }
 
 .first-name-text {
-  position:;
+  position:fixed;
   /* position: relative; */
-  font-size: 72px;
+  font-size: 40px;
   user-select: none;
   animation-name: reveal-text;
+  color: #ee067eda;
+  padding-left: 20px;
   /* cursor: default; */
 
   &:after {
@@ -352,15 +354,26 @@ border: rounded;
 }
 
 .personal-photo-container{
-  padding-left:40% ;
+  padding-left:60% ;
+  padding-right: 50%;
 }
 .src{
  /* display:flex; */
  border-radius: 20px;
  /* margin-left: 50%; */
  margin-bottom: 40px; 
- 
 
+
+}
+.main-repo-button{
+  background-color: transparent;
+  border-color: transparent;
+  /* padding-top: 5%; */
+}
+.main-repo{
+  height:50px;
+  width: 60px;
+  padding-top: 100px;
 }
 
 .section {
