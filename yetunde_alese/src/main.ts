@@ -1,52 +1,60 @@
 import './style.css'
-// import './about.ts'
 
-// import typescriptLogo from './typescript.svg'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.ts'
-
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = 
 
 const mainListDiv = document.getElementById("mainListDiv"),
-    mediaButton = document.getElementById("mediaButton");
+ mediaButton = document.getElementById("mediaButton")
     if (mediaButton != null) //used if statement that serves as a type guard fix error , this chest to see if media button is null and undefined
         mediaButton.onclick = function () {
         "use strict";
-        mainListDiv?.classList.toggle("show_list");
-        mediaButton?.classList.toggle("active");
+        mainListDiv?.classList.toggle("show_list")
+        mediaButton?.classList.toggle("active")
 // used using optional chaining to get rid of obj possibly null error     
         }
-
-const links = document.querySelectorAll(".a");
-
-  for (const link of links) {
-  link.addEventListener("click", clickHandler);
+const links = document.querySelectorAll(".a")
+for (const link of links) {
+  link.addEventListener("click", clickHandler)
     }
-
 function clickHandler(e) {
   e.preventDefault();
-  const href: string = this.getAttribute("href");
-
-  const offsetTop = document.querySelector(href)?.offsetTop;
-
-    scroll({
+const href: string = this.getAttribute("href"),
+offsetTop = document.querySelector(href)?.offsetTop;
+  scroll({
     top: offsetTop,
     behavior: "smooth"
   });
 }
-const mainGitRep = document.getElementById("main-repo-button")
-const mainGitRepoLink ="https://github.com/yaalese1"
-function redirectToMainRepo(){
-  let newWindow = window.open(mainGitRepoLink, "_blank")
-  if(newWindow)
-    newWindow.focus()
-  
 
+
+function redirectToLink(element:HTMLElement, url:string){
+  let newWindow = window.open(url , "_blank")
+    if(newWindow)
+      newWindow.focus()
   // mainGitRep?.addEventListener("click",() => window.location = "https://github.com/yaalese1");
-  console.log("yaya")
+  // console.log("yaya")
   
 }
-mainGitRep?.addEventListener("click", redirectToMainRepo);
+const mainGitRep = document.getElementById("main-repo-button"),
+mainGitRepoLink ="https://github.com/yaalese1"
+
+mainGitRep?.addEventListener("click", () => redirectToLink(mainGitRep,mainGitRepoLink))
+
+const linkedin = document.getElementById("linkedin-button"),
+linkedinLink = "https://www.linkedin.com/in/yetundealese1/"
+
+linkedin?.addEventListener("click",()=> redirectToLink(linkedin,linkedinLink))
+
+const devto = document.getElementById("dev-button"),
+devtoLink = "https://dev.to/yaalese1"
+
+devto?.addEventListener("click", () => redirectToLink(devto,devtoLink))
+
+const loom = document.getElementById("loom-button"),
+loomLink = "https://www.loom.com/spaces/All-Yetundes-Workspace-20585513"
+
+loom?.addEventListener("click",() => redirectToLink(loom,loomLink))
+
+
+
 
 // ...
 
