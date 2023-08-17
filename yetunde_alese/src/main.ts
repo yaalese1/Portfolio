@@ -1,60 +1,145 @@
 import './style.css'
+import anime from 'animejs';
+
+// ... (previous code)
+
+// Initial Hexagon Animation
+function initialHexagonAnimation() {
+  const hexagon = document.getElementById("hexagon");
+  if (hexagon) {
+    const hexagonPath = hexagon.querySelector("#hexagon path");
+    const hexagonY = hexagon.querySelector("#hexagon #Y");
+
+    if (hexagonPath && hexagonY) {
+      const anim = anime.timeline({
+        loop: false,
+        direction: "normal",
+        autoplay: false,
+        complete: () => {
+          // Animation complete, hide hexagon and show content
+          hexagon.style.display = "none";
+          document.body.classList.add("content-loaded");
+
+          // Show the rest of the content and hide y-container
+          const contentContainer = document.querySelector(".content-container");
+          if (contentContainer) {
+            contentContainer.style.display = "block";
+          }
+          const yContainer = document.querySelector(".y-container");
+          if (yContainer) {
+            yContainer.style.display = "none";
+          }
+        },
+      });
+
+      anim
+        .add({
+          targets: hexagonPath,
+          strokeDashoffset: [anime.setDashoffset, 0],
+          easing: "easeInOutQuart",
+          duration: 2000,
+          delay: (el, i) => i * 250,
+        })
+        .add({
+          targets: hexagonY,
+          duration: 1000,
+          opacity: [0, 1],
+          easing: "easeInOutQuart",
+        });
+
+      // Show the hexagon and start animation
+      hexagon.style.display = "block";
+      anim.play();
+    }
+  }
+}
 
 
 const mainListDiv = document.getElementById("mainListDiv"),
  mediaButton = document.getElementById("mediaButton")
-    if (mediaButton != null) //used if statement that serves as a type guard fix error , this chest to see if media button is null and undefined
-        mediaButton.onclick = function () {
-        "use strict";
-        mainListDiv?.classList.toggle("show_list")
-        mediaButton?.classList.toggle("active")
-// used using optional chaining to get rid of obj possibly null error     
-        }
-const links = document.querySelectorAll(".a")
-for (const link of links) {
-  link.addEventListener("click", clickHandler)
-    }
-function clickHandler(e) {
+const navLinks = document.querySelectorAll(".main_list ul li a");
+function toggleHexagonVisibility(show: boolean) {
+  const hexagon = document.getElementById("hexagon");
+  if (hexagon) {
+    hexagon.style.display = show ? "block" : "none";
+  }
+}
+
+for (const link of navLinks) {
+  link.addEventListener("click", (e) => clickHandler.call(link, e));
+}
+
+function clickHandler(this: Element, e: Event) {
   e.preventDefault();
-const href: string = this.getAttribute("href"),
-offsetTop = document.querySelector(href)?.offsetTop;
-  scroll({
-    top: offsetTop,
-    behavior: "smooth"
+  const href = this.getAttribute("href") as string | null;
+
+  if (href !== null) {
+    const target = document.querySelector(href) as HTMLElement;
+
+    if (target) {
+      // Hide the hexagon if not on the home section
+      if (href !== "#home") {
+        toggleHexagonVisibility(false);
+      }
+      const offsetTop = target.offsetTop;
+      scroll({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+      // Close the mobile menu (if open)
+      mainListDiv?.classList.remove("show_list");
+      mediaButton?.classList.remove("active");
+    }
+  }
+}
+
+// Initial Hexagon Animation on page load
+window.addEventListener("load", initialHexagonAnimation);
+
+// Restore hexagon visibility when navigating back to home section
+window.addEventListener("hashchange", () => {
+  const currentHash = window.location.hash;
+  if (currentHash === "#home") {
+    toggleHexagonVisibility(true);
+  } else {
+    toggleHexagonVisibility(false);
+  }
+});
+
+
+
+function redirectToLink(element: HTMLElement, url: string) {
+  element.addEventListener("click", () => {
+    let newWindow = window.open(url, "_blank");
+    if (newWindow) {
+      newWindow.focus();
+    } 
   });
 }
 
-
-function redirectToLink(element:HTMLElement, url:string){
-  let newWindow = window.open(url , "_blank")
-    if(newWindow)
-      newWindow.focus()
-  // mainGitRep?.addEventListener("click",() => window.location = "https://github.com/yaalese1");
-  // console.log("yaya")
-  
-}
 const mainGitRep = document.getElementById("main-repo-button"),
-mainGitRepoLink ="https://github.com/yaalese1"
+ mainGitRepoLink = "https://github.com/yaalese1";
+if (mainGitRep){
 
-mainGitRep?.addEventListener("click", () => redirectToLink(mainGitRep,mainGitRepoLink))
-
+  redirectToLink(mainGitRep, mainGitRepoLink);
+}
 const linkedin = document.getElementById("linkedin-button"),
 linkedinLink = "https://www.linkedin.com/in/yetundealese1/"
-
-linkedin?.addEventListener("click",()=> redirectToLink(linkedin,linkedinLink))
+if (linkedin){
+  redirectToLink(linkedin,linkedinLink);
+}
 
 const devto = document.getElementById("dev-button"),
 devtoLink = "https://dev.to/yaalese1"
-
-devto?.addEventListener("click", () => redirectToLink(devto,devtoLink))
-
+if (devto){
+  redirectToLink(devto,devtoLink)
+}
 const loom = document.getElementById("loom-button"),
 loomLink = "https://www.loom.com/spaces/All-Yetundes-Workspace-20585513"
 
-loom?.addEventListener("click",() => redirectToLink(loom,loomLink))
-
-
-
+if(loom){
+  redirectToLink(loom,loomLink)
+}
 
 // ...
 

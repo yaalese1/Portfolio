@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/animejs": "^3.1.7",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1"
   }
 }
