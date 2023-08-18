@@ -373,7 +373,9 @@ border: rounded;
   
   margin-left: 30vw;
   width:50%;
-  font-family:Inter-ExtraLightitalic;
+  text-shadow: 2px 2px 4px rgba(255, 252, 252, 0.806);
+  font-family: 'Gill Sans', 'Gill Sans MT', 
+  Calibri, 'Trebuchet MS', sans-serif;
 }
 .paragraph1{
   padding-bottom: 10px;
@@ -597,6 +599,18 @@ border: rounded;
     -moz-transform: scale(0.3);
     transform: scale(0.3);
   }
+  .x11{
+    -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    
+    left: 45%;
+    top: 5%;
+    
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+  }
   
   /* OBJECTS */
   
@@ -704,22 +718,54 @@ border: rounded;
 .section {
   padding: 150px 0;
 }
-.section:nth-of-type(1),
+/* .section:nth-of-type(1),
 .section:nth-of-type(3) {
   background: var(--beige);
-}
+} */
 
 html { 
   scroll-behavior: smooth; 
 }
 
 
-
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vw;
+  padding-left: 20vw;
+  text-transform: uppercase;
+  width: 160px;
+  text-align: center;
+  white-space: nowrap;
+  padding-bottom: 13px;
+  position: relative;
+}
+.title h1:before {
+  background-color: rgba(239, 13, 111, 0.986);
+  content: '';
+  display: inline-block;
+  height: 3px;
+  width: 70px;
+  margin-bottom: 5px;
+  margin-right: 60px;
+}
+.title h1:after {
+  background-color: rgba(239, 13, 111, 0.986);
+  content: '';
+  display: inline-block;
+ 
+  height: 3px;
+  width: 70px;
+  margin-bottom: 0.25em;
+  margin-left: 60px;
+}
 .project-card{
   width: 40vw;
   height: 20vw;
-  margin-top: 40px;
-  padding-top: 20px;
+  /* margin-top: 40px; */
+  /* padding-top: 10px; */
   padding-bottom: 30px;
   padding-left: 30%;
 
@@ -728,10 +774,12 @@ html {
 .project-title{
   display: flex;
   flex-direction: row;
-  padding-top: 15vw;
+  align-items: center; /* Vertically center the content */
+  padding-top: 3vw; /* Adjust this value as needed */
   color: rgba(239, 13, 111, 0.986);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 0; /* Remove any default margin to control spacing */
   
 }
 .project-description{
@@ -745,4 +793,99 @@ html {
   height: 20vw;
   padding-left: 10vw;
 }
+
+
+.card {
+  width: 5%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  
+}
+
+.skill-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards horizontally */
+  align-items: center; /* Center cards vertically */
+  width: 100%; /* Adjust width if needed */
+  padding-left: 20px; /* Adjust padding as needed */
+  padding-right: 20px; /* Adjust padding as needed */
+}
+
+.skill-images .card {
+  width: calc(33.33% - 20px); /* Adjusted to fit three cards in a row with margins */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-images img {
+  width: 100px;
+  height: 100px; /* Adjust the height as needed */
+  margin: 10px;
+}
+
+/* #contact-container { 
+  
+   padding-top:0%;
+  padding-left: 10%;
+}  */
+
+.contact-text{
+  padding-top: 50%;
+  padding-left: 10vw;
+  padding-bottom: 10px;
+}
+
+
+.contact-paragraph{
+  display:flex ;
+  flex-direction: column;
+  margin-left: 30vw;
+  width:50%;
+  font-size: larger;
+  font: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', 
+  Calibri, 'Trebuchet MS', sans-serif;
+}
+.chat-button{
+
+  display: inline-block;
+  padding: 10px 20px;
+ 
+  background-color: white;
+  border: 2px solid rgba(239, 13, 111, 0.986);
+  color: rgba(239, 13, 111, 0.986);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+.chat-button:hover {
+  background-color: rgba(239, 13, 111, 0.986);
+  color: white;
+}
+
+.chat{
+  padding-bottom: 40%;
+  padding-left: 50%;
+}
+
+
+
+
+ 
+
 

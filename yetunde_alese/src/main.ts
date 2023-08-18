@@ -141,6 +141,13 @@ if(loom){
   redirectToLink(loom,loomLink)
 }
 
+const email = document.querySelector(".chat-button") as HTMLElement,
+emailLink = "mailto:yaalese1@gmail.com"
+
+if(email){
+  redirectToLink(email,emailLink)
+}
+
 // ...
 
 // Create the anchor element
