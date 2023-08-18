@@ -611,6 +611,18 @@ border: rounded;
     -moz-transform: scale(0.6);
     transform: scale(0.6);
   }
+  .x12{
+    -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    
+    left: 55%;
+    top: 10%;
+    
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+  }
   
   /* OBJECTS */
   

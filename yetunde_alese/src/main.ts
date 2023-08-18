@@ -21,11 +21,11 @@ function initialHexagonAnimation() {
           document.body.classList.add("content-loaded");
 
           // Show the rest of the content and hide y-container
-          const contentContainer = document.querySelector(".content-container");
+          const contentContainer = document.querySelector(".content-container") as HTMLElement;
           if (contentContainer) {
             contentContainer.style.display = "block";
           }
-          const yContainer = document.querySelector(".y-container");
+          const yContainer = document.querySelector(".y-container") as HTMLElement;
           if (yContainer) {
             yContainer.style.display = "none";
           }
@@ -56,7 +56,7 @@ function initialHexagonAnimation() {
 
 
 const mainListDiv = document.getElementById("mainListDiv"),
- mediaButton = document.getElementById("mediaButton")
+mediaButton = document.getElementById("mediaButton")
 const navLinks = document.querySelectorAll(".main_list ul li a");
 function toggleHexagonVisibility(show: boolean) {
   const hexagon = document.getElementById("hexagon");
@@ -118,7 +118,7 @@ function redirectToLink(element: HTMLElement, url: string) {
 }
 
 const mainGitRep = document.getElementById("main-repo-button"),
- mainGitRepoLink = "https://github.com/yaalese1";
+mainGitRepoLink = "https://github.com/yaalese1";
 if (mainGitRep){
 
   redirectToLink(mainGitRep, mainGitRepoLink);
