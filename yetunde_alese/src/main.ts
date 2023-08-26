@@ -38,7 +38,7 @@ function initialHexagonAnimation() {
           strokeDashoffset: [anime.setDashoffset, 0],
           easing: "easeInOutQuart",
           duration: 2000,
-          delay: (el, i) => i * 250,
+          delay: (_, i) =>  i  * 250,
         })
         .add({
           targets: hexagonY,
@@ -148,6 +148,8 @@ if(email){
   redirectToLink(email,emailLink)
 }
 
+
+//Move links and link redirects to to html file . 
 // ...
 
 // Create the anchor element
