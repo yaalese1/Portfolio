@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@types/animejs": "^3.1.7",
-    "typescript": "^5.0.2",
+    "typescript": "^5.2.2",
     "vite": "^4.3.9"
   },
   "dependencies": {
