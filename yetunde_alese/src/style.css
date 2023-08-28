@@ -308,6 +308,7 @@ border: rounded;
   color: #ee067eda;
   padding-left: 20px;
   padding-top: 10%;
+  bottom: 0;
   /* cursor: default; */
 
   &:after {
