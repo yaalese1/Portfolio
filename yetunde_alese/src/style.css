@@ -11,7 +11,34 @@
 @supports (font-variation-settings: normal) {
   :root { font-family: 'Inter var', sans-serif; }
 }
+
+@media screen and (max-width: 768px) {
+  .web-app {
+    display: none;
+  }
+}
+
+@media  screen and (min-width:768px) {
+  .message-container{
+    display: none;
+  }
   
+}
+
+
+@media screen and (max-width: 767px) {
+ 
+  
+  .message-container {
+    display: block ;
+    text-align: center ;
+    padding: 50px ;
+    /* background-color: #f40585 ; */
+    color:#f40585 ;
+    font-size: 18px ;
+    padding-top: 50vw;
+  }
+}
 .body{
   background-image: url(/redit.png);
   /* overflow: auto;
