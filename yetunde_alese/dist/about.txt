@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Cherry Swash
+- Font Author: Copyright (c) 2012, Natalia Kasatkina (kasatkinanataliya@gmail.com)
+- Font Source: http://fonts.gstatic.com/s/cherryswash/v20/i7dNIFByZjaNAMxtZcnfAy58QHi-EwWMbg.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
