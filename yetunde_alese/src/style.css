@@ -41,6 +41,8 @@
 }
 .body{
   background-image: url(/redit.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   /* overflow: auto;
   width: min-content; */
 
@@ -777,7 +779,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 10vw;
+  padding-top: 2vw;
   padding-left: 20vw;
   text-transform: uppercase;
   width: 160px;
@@ -886,7 +888,7 @@ html {
 }  */
 
 .contact-text{
-  padding-top: 50%;
+  padding-top: 50vw;
   padding-left: 10vw;
   padding-bottom: 10px;
 }
